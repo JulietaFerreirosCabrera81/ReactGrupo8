@@ -5,27 +5,22 @@ import { Classification } from "./components/Classification";
 import { Buttons } from "./components/Buttons";
 import { Descript } from "./components/Descript";
 import { Title } from "./components/Title";
+import { CONSTANTS } from "../../utils/constants";
+import { NavBar } from "./styles/NavBar";
 
  export const Banner = ({data})=>{
    
     return (
         
         <BannerContainer image={data?.backdrop} >
-            <div style={{
-                display: "flex",
-                flexdirection:"row",
-                justifycontent: "space-between",
-                width: "100%",
-                height:"20%",
-                color:"black",
-            }}>
-                <Image />
+            <NavBar color={CONSTANTS.colors.primary}>
+                <Image  />
                 <Type />
                 <Title />
                 <Descript />
                 <Classification />
-                <Buttons />  
-            </div>    
+                <Buttons /> 
+            </NavBar>     
         </BannerContainer>
     );
 }

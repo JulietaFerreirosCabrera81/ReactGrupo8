@@ -1,16 +1,13 @@
 import React from 'react';
-import { Movies } from './features/movies/pages/Movies';
-import { Series } from './features/series/pages/Series';
+import { AuthProvider } from './auth/AuthProvider';
+import { AppRoutes } from './routes/App.routes';
 
 export const App = ()=> {
  
   return (
-    <div>
-      
-        <Movies/>
-        <Series/>
-      
-    </div>
+    <AuthProvider>
+        <AppRoutes/>  
+    </AuthProvider>
   );
 };
 

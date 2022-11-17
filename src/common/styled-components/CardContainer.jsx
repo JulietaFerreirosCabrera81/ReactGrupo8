@@ -13,10 +13,5 @@ export const CardContainer = styled.div `
         transform: scale(1.1);
     }
 
-
-
-
-
-
 `;
 
