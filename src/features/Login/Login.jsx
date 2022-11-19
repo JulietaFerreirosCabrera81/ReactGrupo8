@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth/AuthContext';
+import styles from './Login.module.css';
 
-
-export const Login = () => {
+export const Login = ({data}) => {
   
     const navigate = useNavigate();
 
@@ -39,23 +39,32 @@ export const Login = () => {
         };
   
     return (
-    <div>
+    <div className={styles["fondo"]}>
+        <div className={styles["container"]}>
+        <h2> Iniciar Sesion </h2>    
         <form onSubmit={handleSubmit}>
-            <input
+            <input 
+                className={styles["input"]}
+                placeholder="email"
                 type="text"
                 value={form.email}
                 onChange={handleChange}
                 name="email"
+                
             />
             <input
+                className={styles["input"]}
+                placeholder="contraseña"
                 type="password"
                 value={form.password}
                 onChange={handleChange}
                 name="password"
             />
-            <button type="submit"> Iniciar Sesion </button>
+            <button 
+                type={styles["button"]}
+                > Iniciar Sesion </button>
         </form>
-        <h5> { isAuth ? "Autenticado" : "No Autenticado"}</h5>
+        </div>
     </div>
   );
 };

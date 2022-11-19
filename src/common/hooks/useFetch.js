@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
 
- export const useFetch = (service) =>{
+ export const useFetch = (service, onInit= true ) =>{
     const[data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const[error, setError] = useState();
+    const [ canFetch, setCanFetch ] = useState(onInit);
 
 const getData = async () => {
     setIsLoading(true)
@@ -19,13 +20,16 @@ const getData = async () => {
    };
 
     useEffect(() => {
-       getData();
-    }, [])
+        if ( canFetch ){
+        getData();
+        }
+    }, [canFetch])
     
     return {
         data,
         isLoading,
         error,
+        setCanFetch,
     };
 
 }

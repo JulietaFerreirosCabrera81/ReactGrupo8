@@ -8,10 +8,7 @@ export const CardContainer = styled.div `
     background: url(${(props) => props.image});
     background-size: cover;
     background-position: center;
-
     &:hover{
         transform: scale(1.1);
     }
-
 `;
-

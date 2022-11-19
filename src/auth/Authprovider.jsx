@@ -6,8 +6,13 @@ import { authReducer, initialState } from './reducer/authReducer'
 
 
 const initAuthReducer = ()=> {
-    return JSON.parse(localStorage.getItem("user")) || initialState;
-}
+    const user = JSON.parse(localStorage.getItem("user"));
+    return{
+        isAuth:!!user,
+        user: user,
+    }
+
+    } 
 
 export const AuthProvider = ({children}) => {
   
@@ -23,14 +28,14 @@ export const AuthProvider = ({children}) => {
             payload: usuario,
           });
 
-        localStorage.getItem("user", JSON.stringify({
+        localStorage.setItem("user", JSON.stringify({
             isAuth: true,
             user: usuario,
         }));  
     };
     
     const logout =()=> {
-
+        localStorage.removeItem('user');
         dispatch({
             type:actionTypes.LOGOUT,
         })

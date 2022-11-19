@@ -11,7 +11,8 @@ export const Movies = () => {
     
     const {data : movies, error: errorMovies, isLoading: isLoadingMovies  } = useFetch(getPopularMovies);
     const { data: topMovies, error: errorTopMovies, isLoading: isLoadingTopMovies } = useFetch(getPopularTopMovies);
-     
+    
+    
 return (
     <>
         { isLoadingMovies || isLoadingTopMovies? (
