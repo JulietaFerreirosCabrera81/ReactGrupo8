@@ -4,15 +4,13 @@ import { actionTypes } from './reducer/actionTypes'
 import { authReducer, initialState } from './reducer/authReducer'
 
 
-
 const initAuthReducer = ()=> {
     const user = JSON.parse(localStorage.getItem("user"));
     return{
         isAuth:!!user,
         user: user,
-    }
-
-    } 
+    };
+};
 
 export const AuthProvider = ({children}) => {
   

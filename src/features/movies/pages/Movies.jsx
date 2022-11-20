@@ -19,7 +19,6 @@ return (
             <div> Cargando </div>
         ): (
         <>
-            <Banner data={ movies[0]}/>
             <Title text={CONSTANTS.MOVIES_VIEW.titleMovies}/>
             <Slider entities={movies}/>
             <Title text={CONSTANTS.MOVIES_VIEW.titleTopMovies}/>

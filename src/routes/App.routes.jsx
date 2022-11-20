@@ -1,5 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { NovedadesLink } from "../common/componentsNavBar/components/NovedadesLink";
+import { PeliculasLink } from "../common/componentsNavBar/components/PeliculasLink";
+import { SeriesLink } from "../common/componentsNavBar/components/SeriesLink";
 import { Home } from "../features/Home/Home";
 import { Login } from "../features/Login/Login";
 import { ProtectedRoutes } from "./ProtectedRoutes";
@@ -10,25 +13,28 @@ export const AppRoutes = () => {
 return (
     <BrowserRouter>
         <Routes>
-            <Route
-                path="*"
-                element={
+            <Route path="/login/*" element={
+                    <PublicRoute>
+                        <Routes>
+                            <Route path="/*" element={<Login/>}/>  
+                        </Routes>
+                    </PublicRoute>
+                }/>
+           
+            <Route path="/*" element={
                     <ProtectedRoutes>
                         <Routes>
-                            <Route path="/" element={<Home/>} />
+                            
+                            <Route path="home" element={<Home/>} />
+                            <Route path="movies" element={<PeliculasLink/>}/>
+                            <Route path="series" element={<SeriesLink/>}/>
+                            <Route path="novedades" element={<NovedadesLink/>}/>  
+                            <Route path="/" element={<Navigate to="/home"/>} />                         
                         </Routes>
                     </ProtectedRoutes>
                 }
             />
-
-            <Route
-                path="/login"
-                element={
-                    <PublicRoute>
-                        <Login />
-                    </PublicRoute>
-                }
-             />
+           
         </Routes>
     </BrowserRouter>
    );

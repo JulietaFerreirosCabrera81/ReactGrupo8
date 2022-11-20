@@ -1,14 +1,14 @@
-//Poner estilos en otro lado?
 
-export const Title = ({ text, capitalize = true }) => {
+export const Title = ({ text }) => {
   return (
     <h1
       style={{
-        fontSize: "3rem",
-        margin: "1rem 0",
+        fontSize: "2rem",
+        margin: "1.5rem ",
+        color:"white",
       }}
     >
-      {text && capitalize ? text.toUpperCase() : text}
+      {text }      
     </h1>
   );
 };

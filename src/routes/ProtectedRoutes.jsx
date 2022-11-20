@@ -7,10 +7,15 @@ export const ProtectedRoutes = ({children}) => {
   
     const { isAuth } = useContext(AuthContext);
     
-    if (isAuth) {
-        return children;
-    }
+    // if (isAuth) {
+    //     return children;
+    // }
 
-    return <Navigate to= "/Login" />
- 
+    // return <Navigate to= "/Login" />
+    
+    return ( isAuth )
+      ? children
+      : <Navigate to="/login"/>
+
+
 }

@@ -4,11 +4,10 @@ import { swiperProps } from "./config/props";
 import { CardContainer } from './styles/CardContainer';
 
 
-
 export const Slider = ({ entities }) => {
   return (
     <Swiper {...swiperProps} className="mySwiper">
-      {entities.map((entity) => {
+       {entities.map((entity) => {
         return (
           <SwiperSlide key={entity.id}>
             {/* <Card entity={ entity }/>  */}

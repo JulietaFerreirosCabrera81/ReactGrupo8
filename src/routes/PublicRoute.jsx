@@ -4,14 +4,18 @@ import { AuthContext } from '../auth/AuthContext';
 
 export const PublicRoute = ({children}) => {
   
-    // const { isAuth } = useContext(AuthContext);
+     const { isAuth } = useContext(AuthContext);
 
-    // if(isAuth) {
-    //     return <Navigate to="/"/>
-    // }
+    //  if(isAuth) {
+    //      return <Navigate to="/"/>
+    //  }
   
-    return children;
- 
+    // return children;
+    return (!isAuth)
+    ? children
+    : <Navigate to="/home"/>
+
+
 };
 
 

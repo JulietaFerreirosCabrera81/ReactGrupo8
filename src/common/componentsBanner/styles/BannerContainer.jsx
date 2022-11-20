@@ -11,6 +11,7 @@ export const BannerContainer = styled.div`
     height : 80vh; 
     width: 100%;
     background: url(${(props) => props.image});
+    background-image: cover;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Banner } from '../../../common/componentsBanner/Banner';
 import { Slider } from '../../../common/componentsSlider/Slider';
 import { Title } from '../../../common/componentsSlider/Title';
 import { useFetch } from '../../../common/hooks/useFetch';

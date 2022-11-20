@@ -1,10 +1,9 @@
 import { actionTypes } from "./actionTypes";
 
-
 export const initialState = {
     user: null,
     isAuth: false,
-}
+};
 
 export const authReducer = (state, action) => {
 
@@ -25,6 +24,5 @@ export const authReducer = (state, action) => {
         
         default:
             return state; 
-    }
-
-}
+    };
+};
