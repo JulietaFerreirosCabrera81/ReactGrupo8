@@ -6,15 +6,9 @@ export const PublicRoute = ({children}) => {
   
      const { isAuth } = useContext(AuthContext);
 
-    //  if(isAuth) {
-    //      return <Navigate to="/"/>
-    //  }
-  
-    // return children;
     return (!isAuth)
     ? children
     : <Navigate to="/home"/>
-
 
 };
 

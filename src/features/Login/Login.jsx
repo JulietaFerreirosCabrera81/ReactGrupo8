@@ -1,5 +1,3 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../../auth/AuthContext';
 import { useForm } from './hooks/useForm';
 import styles from './Login.module.css';
 
@@ -19,8 +17,7 @@ return (
                     type="text"
                     value={form.email}
                     onChange={handleChange}
-                    name="email"
-                    
+                    name="email"    
                 />
                 <input
                     className={styles["input"]}

@@ -10,3 +10,4 @@ export const getPopularTopMovies = async ()=>{
     const res = await TMDB.api.get(TMDB.paths.movies.top_rated);
     return adapterTopMovies(res.data.results);
 };
+

@@ -16,15 +16,18 @@ export const useForm= ()=>{
     const handleSubmit = (e) => {
         e.preventDefault();
         const { email, password } = form;
+        if( !email || !password ){
+            return alert("Completar todos los campos")
+        }
+        
         login({
             email,
             password,
         });
-        
-        
-        navigate("/", {
-            replace: true
-        });
+
+        (navigate("/", {
+             replace: true
+        }))
     };
 
     const handleChange = (e) => {

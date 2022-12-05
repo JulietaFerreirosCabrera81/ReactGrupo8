@@ -6,16 +6,9 @@ import { AuthContext } from '../auth/AuthContext';
 export const ProtectedRoutes = ({children}) => {
   
     const { isAuth } = useContext(AuthContext);
-    
-    // if (isAuth) {
-    //     return children;
-    // }
-
-    // return <Navigate to= "/Login" />
-    
-    return ( isAuth )
+ 
+return ( isAuth )
       ? children
       : <Navigate to="/login"/>
 
-
-}
+};

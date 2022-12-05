@@ -12,8 +12,8 @@ export const adapter = (serie)=> {
 
 export const adapterSeries = (series)=> {
     return series.map(adapter);
-}
+};
 
 export const adapterTopSeries = (topSeries)=> {
     return topSeries.map(adapter);
-}
+};

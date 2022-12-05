@@ -1,20 +1,19 @@
-
+import { useContext } from 'react';
+import { AuthContextData } from '../../auth/AuthContextData';
 import { Banner } from '../../common/componentsBanner/Banner';
-import { useFetch } from '../../common/hooks/useFetch';
 import { Movies } from '../movies/pages/Movies';
-import { getPopularMovies } from '../movies/services/getPopularMovies';
 import { Series } from '../series/pages/Series';
 
 
 export const Home = () => {
     
-    const {data : movies, error: errorMovies, isLoading: isLoadingMovies  } = useFetch(getPopularMovies); 
-
+    const { movies } = useContext(AuthContextData);
+    
 return (
-    <div>
-       <Banner data={ movies[10]}/> 
-       <Movies/>
-       <Series/>
+     <div>
+        <Banner data={ movies[10]}/>   
+        <Movies />
+        <Series />
     </div>
   )
 }

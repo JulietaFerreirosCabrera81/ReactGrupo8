@@ -1,15 +1,13 @@
-import React from 'react'
+import { useContext } from 'react';
+import { AuthContextData } from '../../../auth/AuthContextData';
 import { Slider } from '../../../common/componentsSlider/Slider';
 import { Title } from '../../../common/componentsSlider/Title';
-import { useFetch } from '../../../common/hooks/useFetch';
 import { CONSTANTS } from '../../../utils/constants';
-import { getPopularSeries, getPopularTopSeries } from '../../series/services/getPopularSeries';
 
- 
 export const Series = () => {
     
-    const {data : series, error: errorSeries, isLoading: isLoadingSeries  } = useFetch(getPopularSeries);
-    const { data: topSeries, error: errorTopSeries, isLoading: isLoadingTopSeries } = useFetch(getPopularTopSeries);
+    const { series, isLoadingSeries   } = useContext(AuthContextData);
+    const { topSeries, isLoadingTopSeries   } = useContext(AuthContextData);
      
 return (
     <>

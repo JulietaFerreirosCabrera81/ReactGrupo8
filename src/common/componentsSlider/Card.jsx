@@ -1,23 +1,30 @@
-// import React from 'react'
-// import { getMovieDetailsById } from '../../features/movies/services/getMovieDetailsById'
-// import { useFetch } from '../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
+import { CardContainer } from './styles/CardContainer';
 
 
-// export const Card = ({ entity }) => {
+export const Card = ({ entity }) => {
+    
+    const navigate = useNavigate() ;
+  
+    const handleClick = () => {
+       navigate(`movie/${entity.id}`,{
+         state: entity,
+         });
+    };
+  
+return (
+    <>
+        <CardContainer
+            onClick={handleClick}
+            image={entity.backdrop}
+        >
+        </CardContainer>     
+    </>
+    );
+};
 
-//     const { data, error, isLoading, setCanFetch } = useFetch(
-//         ()=> getMovieDetailsById(entity.id), false);
 
-//   return (
-//     <>
-        
-            
-//             onClick={()=>setCanFetch(true)}
-//             image={entity.backdrop }
-//             description={ entity.description}
-           
-       
-//     </>    
-//   );
-// };
+
+
+
 

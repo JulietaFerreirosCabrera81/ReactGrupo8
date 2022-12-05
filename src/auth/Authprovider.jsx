@@ -1,7 +1,7 @@
-import React, { useContext, useReducer } from 'react'
-import { AuthContext } from './AuthContext'
-import { actionTypes } from './reducer/actionTypes'
-import { authReducer, initialState } from './reducer/authReducer'
+import React, { useReducer } from 'react';
+import { AuthContext } from './AuthContext';
+import { actionTypes } from './reducer/actionTypes';
+import { authReducer } from './reducer/authReducer';
 
 
 const initAuthReducer = ()=> {
@@ -15,7 +15,7 @@ const initAuthReducer = ()=> {
 export const AuthProvider = ({children}) => {
   
     const [state, dispatch] = useReducer(authReducer, {},initAuthReducer);
-    console.log(state);
+    
     
     const { isAuth, user } =  state;
 

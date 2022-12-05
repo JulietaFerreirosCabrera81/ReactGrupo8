@@ -15,13 +15,14 @@ export const adapter = (movie)=> {
 
 export const adapterMovies = (movies)=> {
     return movies.map(adapter);
-}
+};
 
 export const adapterTopMovies = (topMovies)=> {
     return topMovies.map(adapter);
-}
+};
 
-export const adapterDetails =(movies)=>{
+export const adapterMovieById =(movies)=>{
     return movies.map(adapter);
-}
+};
+
 
